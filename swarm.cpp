@@ -11,6 +11,7 @@ int main()
   set_cbreak (&save_termios);
 //  noecho();
 	reg.resize(202);
+  system("clear");
 	cout<<"Swarm: Mercenary Demo\n\nby Nathan Marz"<<endl<<endl<<endl;
 	cout<<"Controls:\n\n"
 		<<"arrow keys to change direction of ship\n"
