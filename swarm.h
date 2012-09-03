@@ -5,7 +5,7 @@
 #include "graphicsutil2.h"
 #include <time.h>
 #include <stdlib.h>
-#include "getche.h"
+#include "kbhit.h"
 #include <curses.h>
 #include "cbreak.h"
 
