@@ -167,7 +167,7 @@ int main()
       cout << endl << endl << g << endl << endl;
 			if(g=='Q')
 				return 0;
-			if(g=='C'&&env.getkeepgo()==false)
+			if(g=='X'&&env.getkeepgo()==false)
 				break;
 			if(g=='p')
 			{

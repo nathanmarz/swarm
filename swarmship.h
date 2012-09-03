@@ -96,7 +96,7 @@ private:
 	int price;
 	void fire();
 	route myroute;
-	turret myturrets[40];
+	turret myturrets[50];
 	engine myengines[10];
 	int weapontype; //number to search in turrets for firing
 	int down;
@@ -330,8 +330,8 @@ void turret::setresponse(int resp1)
 
 ship::ship()
 {
-	SIZE = 40;
-	engSIZE = 10;
+  SIZE = 50;
+  engSIZE = 10;
 	speed = 1;
 }
 
@@ -361,9 +361,9 @@ void ship::addturret(int down1, int right1, turret myturret1, int responsenum)
 void ship::addengine(int down1, int right1, picture myengine1)
 {
 	int ctr;
-	for(ctr=0;myengines[ctr].getactive()==true&&ctr<SIZE;ctr++)
+	for(ctr=0;myengines[ctr].getactive()==true&&ctr<engSIZE;ctr++)
 	{}
-	if(ctr<SIZE)
+	if(ctr<engSIZE)
 	{
 		myengines[ctr].init(down1,right1,myengine1);
 	}

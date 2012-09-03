@@ -611,7 +611,7 @@ void initialize()
 	pic = "o";
 	bomb.init(0,0,upR,pic);
 	bomb.settype('N');
-	bombT.init(9,0,8,100, "Bomb Launcher");
+	bombT.init(9,0,8,-1, "Bomb Launcher");
 	bombT.addbullet(-1,0,bomb);
 
 	spreadT.init(2,10,3,-1, "Spread Gun");
@@ -818,6 +818,15 @@ void initialize()
 	battleship.addturret(0,12,missileT);
 	battleship.addturret(0,12,supershockT);
 	battleship.addturret(0,0,halfshieldT,9);
+	battleship.addturret(2,1,bombT,8);
+//	battleship.addturret(2,2,bombT,8);
+	battleship.addturret(2,3,bombT,8);
+	battleship.addturret(0,11,bombT,8);
+	battleship.addturret(0,12,bombT,8);
+	battleship.addturret(0,13,bombT,8);
+	battleship.addturret(2,21,bombT,8);
+//	battleship.addturret(2,22,bombT,8);
+	battleship.addturret(2,23,bombT,8);
 
 	battleship.activate(1);
 	battleship.activate(2);
@@ -826,6 +835,7 @@ void initialize()
 	battleship.activate(5);
 	battleship.activate(6);
 	battleship.activate(7);
+	battleship.activate(8);
 	battleship.activate(9);
 
 /*

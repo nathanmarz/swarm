@@ -227,7 +227,7 @@ bool environment::run()
 		display.text(19,49,(shipdamage-shipmax)*(shipdamage>shipmax));
 		display.text(21,33,"Money earned: ");
 		display.text(21,47,moneyearned-5*(shipdamage-shipmax)*(shipdamage>shipmax));
-		display.text(23,33,"Shift-C to Continue");
+		display.text(23,33,"Shift-X to Continue");
 	}
 	display.line(48,0,48,79,'_');
 	display.line(49,0,49,79,' ');
