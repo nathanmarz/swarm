@@ -1,7 +1,7 @@
 #ifndef _APSTRING_H
 #define _APSTRING_H
 
-#include <iostream.h>
+#include <iostream>
 
 using namespace std;
 // uncomment line below if bool not built-in type
@@ -222,4 +222,3 @@ apstring operator + ( const apstring & str, char ch );
 
 #include "apstring.cpp"
 #endif
-

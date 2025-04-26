@@ -144,8 +144,8 @@ char& apstring::operator[](int k)
 {
     if (k < 0 || myLength <= k)
     {
-        cerr << "index out of range: " << k << " string: " << myCstring
-            << endl;
+        std::cerr << "index out of range: " << k << " string: " << myCstring
+            << std::endl;
         exit(1);
     }
     return myCstring[k];
@@ -157,8 +157,8 @@ char apstring::operator[](int k) const
 {
     if (k < 0 || myLength <= k)
     {
-        cerr << "index out of range: " << k << " string: " << myCstring
-            << endl;
+        std::cerr << "index out of range: " << k << " string: " << myCstring
+            << std::endl;
         exit(1);
     }
     return myCstring[k];
@@ -178,7 +178,7 @@ istream& operator >>(istream & is, apstring & str)
     char ch;
     str = "";    // empty string, will build one char at-a-time
     is >> ch;    // whitespace skipped, first non-white char in ch
-    
+
     if (! is.fail())
     {
         do
@@ -186,13 +186,13 @@ istream& operator >>(istream & is, apstring & str)
             str += ch;
             is.get(ch);
         } while (! is.fail() && ! isspace(ch));
-        
+
         if (isspace(ch))    // put whitespace back on the stream
         {
-            is.putback(ch);     
+            is.putback(ch);
         }
     }
-    
+
     return is;
 }
 
@@ -205,12 +205,12 @@ istream & getline(istream & is, apstring & str)
 
     char ch;
     str = "";     // empty string, will build one char at-a-time
-    
+
     while (is.get(ch) && ch != '\n')
     {
         str += ch;
     }
-    
+
     return is;
 }
 

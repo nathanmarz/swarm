@@ -11,25 +11,25 @@
 
 #include "apmatrix.h"
 #include <stdlib.h>
-#include <iostream.h>
+#include <iostream>
 
 template <class itemType>
 apmatrix<itemType>::apmatrix()
         : myRows(0),
           myCols(0),
           myMatrix(0)
-     
+
 // postcondition: matrix of size 0x0 is constructed, and therefore
 //                will need to be resized later
 {
 
 }
 template <class itemType>
-apmatrix<itemType>::apmatrix(int rows,int cols)      
+apmatrix<itemType>::apmatrix(int rows,int cols)
         : myRows(rows),
           myCols(cols),
           myMatrix(rows)
-     
+
 // precondition: 0 <= rows and 0 <= cols
 // postcondition: matrix of size rows x cols is constructed
 {
@@ -45,12 +45,12 @@ apmatrix<itemType>::apmatrix(int rows, int cols, const itemType & fillValue)
         : myRows(rows),
           myCols(cols),
           myMatrix(rows)
-     
+
 // precondition: 0 <= rows and 0 <= cols
 // postcondition: matrix of size rows x cols is constructed
 //                all entries are set by assignment to fillValue after
 //                default construction
-//     
+//
 {
     int j,k;
     for(j=0; j < rows; j++)
@@ -68,7 +68,7 @@ apmatrix<itemType>::apmatrix(const apmatrix<itemType> & mat)
     : myRows(mat.myRows),
       myCols(mat.myCols),
       myMatrix(mat.myRows)
-     
+
 // postcondition: matrix is a copy of mat
 {
     int k;
@@ -77,7 +77,7 @@ apmatrix<itemType>::apmatrix(const apmatrix<itemType> & mat)
     {
         // cast to avoid const problems (const -> non-const)
         myMatrix[k] = (apvector<itemType> &) mat.myMatrix[k];
-    }   
+    }
 }
 
 template <class itemType>
@@ -91,15 +91,15 @@ template <class itemType>
 const apmatrix<itemType> &
 apmatrix<itemType>::operator = (const apmatrix<itemType> & rhs)
 // postcondition: normal assignment via copying has been performed
-//                (if matrix and rhs were different sizes, matrix has 
-//                been resized to match the size of rhs)     
+//                (if matrix and rhs were different sizes, matrix has
+//                been resized to match the size of rhs)
 {
     if (this != &rhs)                    // don't assign to self!
     {
         myMatrix.resize(rhs.myRows);     // resize to proper # of rows
         myRows = rhs.myRows;             // set dimensions
         myCols = rhs.myCols;
-        
+
         // copy rhs
         int k;
         for(k=0; k < myRows; k++)
@@ -107,7 +107,7 @@ apmatrix<itemType>::operator = (const apmatrix<itemType> & rhs)
        myMatrix[k] = rhs.myMatrix[k];
         }
     }
-    return *this;       
+    return *this;
 }
 
 template <class itemType>
@@ -150,38 +150,31 @@ void apmatrix<itemType>::resize(int newRows, int newCols)
 }
 
 template <class itemType>
-const apvector<itemType> & 
+const apvector<itemType> &
 apmatrix<itemType>::operator [] (int k) const
 // precondition: 0 <= k < number of rows
-// postcondition: returns k-th row     
+// postcondition: returns k-th row
 {
     if (k < 0 || myRows <= k)
     {
-        cerr << "Illegal matrix index: " << k << " max index = ";
-        cerr << myRows-1 << endl;       
+        std::cerr << "Illegal matrix index: " << k << " max index = ";
+        std::cerr << myRows-1 << std::endl;
         exit(1);
-    }    
+    }
     return myMatrix[k];
 }
 
 template <class itemType>
-apvector<itemType> & 
+apvector<itemType> &
 apmatrix<itemType>::operator [] (int k)
 // precondition: 0 <= k < number of rows
 // postcondition: returns k-th row
 {
     if (k < 0 || myRows <= k)
     {
-        cerr << "Illegal matrix index: " << k << " max index = ";
-        cerr << myRows-1 << endl;       
+        std::cerr << "Illegal matrix index: " << k << " max index = ";
+        std::cerr << myRows-1 << std::endl;
         exit(1);
-    }    
+    }
     return myMatrix[k];
 }
-
-
-
-
-
-
-
