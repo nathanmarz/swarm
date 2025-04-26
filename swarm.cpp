@@ -6,7 +6,7 @@
 
 int main()
 {
-  
+
   struct termios save_termios;
   set_cbreak (&save_termios);
 //  noecho();
@@ -32,7 +32,7 @@ int main()
 		<<"DNA blaster - each bullet deals 5 damage, 800 ammo\n"
 		<<"Missile Launcher - deals 1000 damage, very slow firing rate\n"
 		<<"Shockwave Device - pushes all enemies back, 10 ammo\n"
-		<<"Stasis Field Generator - freezes all enemies for a short period of time\n"
+		<<"Stasis Field - freezes all enemies for a short period of time\n"
 		<<"Bomb Launcher - launches explosive bombs, limited ammo\n"
 		<<"Centralizer - Pushes enemies to center of screen for limited time\n"
 		<<"Vibration Field - Forces enemies to vibrate violently, taking damage over time\n"
@@ -51,7 +51,7 @@ int main()
 	cout<<"To Do:\n\n"
 		<<"Hotkeys to certain weapons\n"
 		;
-		
+
 
   getchar();
 	cout<<"\033[2J\033[1;1H";
@@ -123,7 +123,7 @@ int main()
 	mylevel.add(drop,3150,3650,200,1);
 	mylevel.add(drop,3950,-1,0,0);
 
- 
+
 //	LEVEL ONE
 /*
 	mylevel.add(easy,0,200,50,1);

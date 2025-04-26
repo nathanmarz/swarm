@@ -15,8 +15,8 @@ todo:
 1. more routes
 2. multiple buyable ships with engines and turrets
 3. a high score table ranked according to how far each player got into the game
-4. you lose the game if you go bankrupt since eventually the game will get so difficult with the swarms 
-   that you'll be netting negative money every swarm wave (b/w waves you buy stuff, and eventually all your money 
+4. you lose the game if you go bankrupt since eventually the game will get so difficult with the swarms
+   that you'll be netting negative money every swarm wave (b/w waves you buy stuff, and eventually all your money
    will go to below 0
 5. Nukes (create high explosive bombs)  hardcode the bullets a nuke makes
 6. have certain enemies explode differently when they kamikaze than when shot down!
@@ -94,7 +94,7 @@ void Explode(int down, int right, char exptype)
 void initialize()
 {
 //routes
-	
+
 	downVS = "S";
 	downVS = "7";
 	downVS = "E";
@@ -198,7 +198,7 @@ void initialize()
 	backarchR = " .   *.  ";
 	backarchR = "  *..    ";
 	backarchR.reset();
- 
+
 	backarchL = "C        ";
 	backarchL = ".        ";
 	backarchL = "*       S";
@@ -602,7 +602,7 @@ void initialize()
 
 //turrets
 //idea: mines!!!
-	
+
 	fastT.init(1,6,2,-1, "Fast Gun");
 	fastT.addbullet(-2,0,fastB);
 
@@ -656,7 +656,7 @@ void initialize()
 	supershockT.init(7,0,50,8,"Super Shockwave");
 	supershockT.special("Super Shock");
 
-	stasisT.init(0,300,7,"Stasis Field Generator");
+	stasisT.init(0,300,7,"Stasis Field");
 	stasisT.special("Stasis");
 
 	vibrT.init(0,250,5,"Vibration Field");
